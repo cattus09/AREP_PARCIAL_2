@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Busqueda de la posicion de un numero</h1>
+    <form>
+        <label for="lista">Lista:</label><br>
+        <input type="text" id="lista" name="lista" value="10,20,13,40,60"><br><br>
+        <label for="value">Valor:</label><br>
+        <input type="text" id="value" name="value" value="13"><br><br>
+        <input type="button" value="Linear Search" onclick="loadLinearSearch()">
+        <input type="button" value="Binary Search" onclick="loadBinarySearch()">
+    </form> 
+    <div id="getrespmsg"></div>
+
+    <script>
+        function loadLinearSearch() {
+            let list = document.getElementById("lista").value;
+            let value = document.getElementById("value").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("getrespmsg").innerHTML =
+                this.responseText;
+            }
+            xhttp.open("GET", "/linearsearch?list=" + list + "&value=" + value);
+            xhttp.send();
+        }
+
+        function loadBinarySearch() {
+            let list = document.getElementById("lista").value;
+            let value = document.getElementById("value").value;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("getrespmsg").innerHTML =
+                this.responseText;
+            }
+            xhttp.open("GET", "/binarysearch?list=" + list + "&value=" + value);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
