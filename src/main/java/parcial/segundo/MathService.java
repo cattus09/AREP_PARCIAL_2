@@ -16,6 +16,7 @@ public class MathService {
             List<Integer> listaEnteros = new ArrayList<>();
             String[] numeros = list.split(",");
             for (String n : numeros) {listaEnteros.add(Integer.parseInt(n));}
+            System.out.println(value);
             return Search.lineal( listaEnteros,Integer.parseInt(value));
         });
 
@@ -25,6 +26,7 @@ public class MathService {
             List<Integer> listaEnteros = new ArrayList<>();
             String[] numeros = list.split(",");
             for (String n : numeros) {listaEnteros.add(Integer.parseInt(n));}
+            System.out.println(value);
             return Search.binari( listaEnteros,Integer.parseInt(value));
         });
   }

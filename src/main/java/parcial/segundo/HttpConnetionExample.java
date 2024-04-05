@@ -16,8 +16,8 @@ public final class HttpConnetionExample {
 
     public static String conect(String[] url) throws IOException {
         res = url;
-        System.out.println(res[0]);
         String urls = (count++ % 2 == 0) ? res[0] : res[1];
+        System.out.println(urls);
         URL obj = new URL(urls);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
